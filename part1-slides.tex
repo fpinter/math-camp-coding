@@ -1,0 +1,290 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{footline}[frame number]
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+
+\title{Math Camp 2020: Programming (part 1)}
+\author{Frank Pinter}
+\date{20 August 2020}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\section*{Introduction}
+
+\begin{frame}{Structure of today's session}
+\begin{enumerate}
+    \item General programming advice ($\approx 30$ min)\itemsep=2em
+    \item Julia walkthrough ($\approx 60$ min)
+    \item Open time for questions ($\approx 30$ min)
+    \begin{itemize}
+        \item Feel free to ask questions throughout!
+    \end{itemize}
+\end{enumerate}
+All materials from today's presentation are on GitHub at \\
+\url{https://github.com/fpinter/math-camp-coding}
+\end{frame}
+
+\section{Basic principles}
+
+\begin{frame}{Basic principles}
+    \begin{enumerate}
+        \item Learn by doing (practice!)
+        \item Always keep your future self in mind
+        \item Your time is valuable
+        \item Talk to people about programming
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Learn by doing}
+    \begin{itemize}
+        \item Especially early in grad school, treat learning about programming as an investment
+        \item Practice new skills as often as you can
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Always keep your future self in mind}
+    \begin{itemize}
+        \item When you return to a project later on, you should be able to:\itemsep=1.5em
+        \begin{itemize}
+            \item Figure out what's going on
+            \item Not screw things up
+        \end{itemize}
+        \item Write clear readme files (don't rely on your memory)
+        \item Clearly written code $\gg$ over-commenting
+        \begin{itemize}
+            \item Use good variable names
+            \item Use good function names
+            \item Use functions to simplify things
+        \end{itemize}
+        \item Write comments with a specific audience in mind
+        \begin{itemize}
+            \item Typically your future self and your collaborators
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Your time is valuable}
+    \begin{itemize}
+        \item Spend time improving your ability to work, organization, and accuracy\itemsep=2em
+        \item Do not spend too much time making your code run faster
+        \item<2> A classic quote in computing: \begin{quote}
+    ``Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a  strong negative impact when debugging and maintenance are considered. We \textit{should} forget about small efficiencies, say about 97\% of the time: premature optimization is the root of all evil.''
+    \end{quote}
+    --\href{https://doi.org/10.1145/356635.356640}{Donald Knuth}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Talk to people about programming}
+    \begin{itemize}
+        \item There might be ways to solve your problem you hadn't thought of\itemsep=2em
+        \item Talk to your cohort, talk to people you know
+        \item Stay up to date on tools
+    \end{itemize}
+\end{frame}
+
+\section{More specific advice}
+
+% Miklos Koren tweet
+
+\begin{frame}{When writing code}
+    \begin{itemize}
+        \item Don't repeat yourself\itemsep=2em
+        \begin{itemize}
+            \item Don't copy and paste; write functions
+        \end{itemize}
+        \item Write (and save) formal tests
+        \begin{itemize}
+            \item Write tests for functions \textit{when you write the functions}
+            \item Write checks your data should pass
+        \end{itemize}
+        \item Know and use the idioms of your language
+        \begin{itemize}
+            \item Know \textit{why} your code works the way it does
+            \item Know the common gotchas
+            \item Nothing should be magic!
+        \end{itemize}
+        \item Understand all unexpected results
+        \begin{itemize}
+            \item Learn how to read the error messages
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{When organizing your project}
+    \begin{itemize}
+        \item Aim for full reproducibility, including a detailed readme file instructing a replicator \textit{exactly what to do}\itemsep=2em
+        \begin{itemize}
+            \item Keep this file continuously updated as you work
+            \item Fewer steps for the replicator = better
+        \end{itemize}
+        \item Don't write critical parts of your code under time pressure
+        \begin{itemize}
+            \item If you do, go back and clean it up later
+        \end{itemize}
+        \item Use version control to track changes over time
+        \item Split your code into steps, with a clear order
+        \begin{itemize}
+            \item You should be able to clear all your outputs/intermediate files and run the master script
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Note on choosing programming languages}
+    \begin{itemize}
+        \item Tired: wars between programming languages on Twitter\itemsep=2em
+        \item Wired: using the right language for the task at hand
+        \item There's no rule saying you have to use the same language for everything (even within a project)
+        \item Questions to ask yourself:
+        \begin{itemize}
+            \item What do your coauthors use?
+            \item In what language do you work most efficiently?
+            \item What functionality do you need?
+            \begin{itemize}
+                \item e.g., data cleaning, web scraping, heavy computation
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\section{Specific advice: first year}
+
+\begin{frame}{First year vs. research}
+    \begin{tabular}{p{2.5cm}|p{3.5cm}|p{3.5cm}}
+    & G1 coursework & Research/real life \\
+    \hline
+    Day to day work &
+Numerical computation with clean or simulated data &
+Mostly wrangling real-world data (unless you’re a theorist) \\
+\hline
+Maintainability &
+Submit and you’re done &
+Return to your code many times, sometimes years later \\
+\hline
+Accuracy &
+Nice to have &
+Be obsessive about making sure your results are correct \\
+    \end{tabular}
+\end{frame}
+
+\begin{frame}{First year vs. resarch}
+    \begin{tabular}{p{2cm}|p{4cm}|p{4cm}}
+    & G1 coursework & Research/real life \\
+    \hline
+Testing &
+Smell test + write formal tests for basic debugging &
+Smell test + write lots of formal tests \\
+\hline
+Collaboration &
+Discuss with group, but write code independently &
+Depends on your style and your coauthors’ styles \\
+\hline
+Version control &
+Nice to have, but optional &
+Very important
+    \end{tabular}
+\end{frame}
+
+\section{Further resources}
+\begin{frame}{Further resources}
+\begin{itemize}
+    \item \href{https://scholar.harvard.edu/ristovska/resources}{LJ Ristovska's presentation}\itemsep=2em
+    \item \href{https://www.sas.upenn.edu/~jesusfv/teaching.html}{Jesús Fernández-Villaverde's lecture notes}
+    \item \href{https://quantecon.org/}{QuantEcon}
+    \item \href{https://www.iq.harvard.edu/data-science-services/workshop-materials}{Harvard IQSS training materials}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{How to get help}
+
+\begin{enumerate}
+    \item Check the built-in help in the language
+    \item Google
+    \begin{itemize}
+        \item Often the result will be a Stack Overflow answer -- these are often helpful but not always
+        \item Watch out for out-of-date info (especially for Julia)
+    \end{itemize}
+    \item Ask someone
+    \begin{itemize}
+        \item Plug for the econ department Slack
+    \end{itemize}
+    \item Ask a question on Stack Overflow
+    \begin{itemize}
+        \item Stack Overflow has guidance on how to ask a good question; read that first
+    \end{itemize}
+\end{enumerate}
+\end{frame}
+
+\section{Julia}
+
+\begin{frame}{Why Julia today?}
+\begin{itemize}
+    \item The focus of math camp: skills you'll use in first year\itemsep=2em
+    \begin{itemize}
+      \item Numerical computation, matrix algebra, optimization
+    \end{itemize}
+    \item Julia excels at these and its matrix syntax is clean
+    \item<2-> Historically the dominant language for first year PhD was Matlab
+    \begin{itemize}
+        \item Julia syntax is closely based on Matlab\itemsep=1em
+        \item Unlike Matlab, Julia is free and open-source, with a growing community, and many of the advantages of modern languages
+        \item You can switch back to Matlab anytime if you want
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Alternatives to Julia}
+\begin{itemize}
+    \item R\itemsep=2em
+    \begin{itemize}
+        \item De facto standard in statistics
+        \item Great for work with real data
+        \item Matrix syntax is less intuitive
+    \end{itemize}
+    \item<2-> Python
+    \begin{itemize}
+        \item De facto standard in physical sciences, engineering, and the tech industry
+        \item Great all-purpose language (``Swiss army knife'')
+        \item Matrix syntax has improved but is still less intuitive than Julia's
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Downsides of Julia}
+\begin{itemize}
+    \item Generally harder to use than R or Python for manipulation of real data\itemsep=2em
+    \item The language is unstable (most help files online before 2018 are useless)
+    \item The community is less active than R and Python
+\end{itemize}
+\end{frame}
+
+\end{document}
