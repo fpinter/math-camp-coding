@@ -32,3 +32,6 @@ Manifest.toml
 *.snm
 *.synctex.gz
 *.toc
+
+# Jupyter extra files
+.ipynb_checkpoints/
