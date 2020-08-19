@@ -13,3 +13,4 @@ Setup instructions for Julia and Jupyter:
 
 If you need to troubleshoot, try [QuantEcon](https://julia.quantecon.org/getting_started_julia/getting_started.html#Desktop-Installation-of-Julia-and-Jupyter), on which these instructions are based (but which has many more steps).
 
+Thanks to Pedro Degiovanni, Michael Droste, Erica Moszkowski, and Ljubica Ristovska for useful suggestions and feedback.
