@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[handout]{beamer}
 
 \mode<presentation>
 {
@@ -8,7 +8,7 @@
   \setbeamertemplate{navigation symbols}{}
   \setbeamertemplate{footline}[frame number]
   \setbeamertemplate{caption}[numbered]
-} 
+}
 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -62,7 +62,7 @@ All materials from today's presentation are on GitHub at \\
         \item Learn by doing (practice!)\itemsep=2em
         \item Always keep your future self in mind
         \item Your time is valuable
-        \item Talk to people about programming
+        \item Don't reinvent the wheel
     \end{enumerate}
 \end{frame}
 
@@ -70,6 +70,7 @@ All materials from today's presentation are on GitHub at \\
     \begin{itemize}
         \item Especially early in grad school, treat learning about programming as an investment\itemsep=2em
         \item Practice new skills as often as you can
+        \item Programming needs frequent reinforcement
     \end{itemize}
 \end{frame}
 
@@ -77,10 +78,10 @@ All materials from today's presentation are on GitHub at \\
     \begin{itemize}
         \item When you return to a project later on, you should be able to:\itemsep=1.5em
         \begin{itemize}
-            \item Figure out what's going on
+            \item Figure out what's going on relatively quickly
             \item Not screw things up
         \end{itemize}
-        \item Write clear readme files (don't rely on your memory)
+        \item Write clear documentation and keep it updated (don't rely on your memory)
         \item Clearly written code $\gg$ over-commenting
         \begin{itemize}
             \item Use good variable names
@@ -96,26 +97,45 @@ All materials from today's presentation are on GitHub at \\
 
 \begin{frame}{Your time is valuable}
     \begin{itemize}
-        \item Spend time improving your ability to work, organization, and accuracy\itemsep=2em
-        \item Time spent making your code run faster is often (but not always) a waste
-        \item<2> A classic quote in computing: \begin{quote}
-    ``Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a  strong negative impact when debugging and maintenance are considered. We \textit{should} forget about small efficiencies, say about 97\% of the time: premature optimization is the root of all evil.''
-    \end{quote}
-    --\href{https://doi.org/10.1145/356635.356640}{Donald Knuth}
+        \item Your time is more valuable than the computer's time\itemsep=2em
+        \item Prioritize organization, readability, and clarity over fast runtime
+        \item Resist the temptation to focus on runtime too early
+        \begin{itemize}
+            \item Wait until you've checked for accuracy
+            \item Wait until you have a clear idea which parts are actually critical
+        \end{itemize}
+        \item Runtime is important in parts of the code you'll be running many times as part of your usual workflow (and those parts only)
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Talk to people about programming}
+\begin{frame}{Your time is valuable}
+\begin{quotation}
+  Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We \textbf{should} forget about small efficiencies, say about 97\% of the time: premature optimization is the root of all evil. \\
+
+  Yet we should not pass up our opportunities in that critical 3\%.
+\end{quotation}
+--\href{https://doi.org/10.1145/356635.356640}{Donald Knuth (1974)}
+\end{frame}
+
+\begin{frame}{Don't reinvent the wheel}
     \begin{itemize}
         \item There might be ways to solve your problem you hadn't thought of\itemsep=2em
-        \item Talk to your cohort, talk to people you know
-        \item Stay up to date on tools
+        \item Talk to your cohort, talk to people you know, ask questions online
+        \item Stay up to date on tools and the technical community
+        \item If something feels like a common problem, spend time looking for a common solution
+        \begin{itemize}
+            \item Poll: are you familiar with regular expressions?
+        \end{itemize}
     \end{itemize}
 \end{frame}
 
 \section{More specific advice}
 
-% Miklos Koren tweet
+\begin{frame}{We are more like software engineers than we think}
+\includegraphics[width=\textwidth]{files/tweet.pdf}
+
+(\href{https://twitter.com/korenmiklos/status/1294363828646543362?s=20}{source})
+\end{frame}
 
 \begin{frame}{When writing code}
     \begin{itemize}
@@ -127,6 +147,7 @@ All materials from today's presentation are on GitHub at \\
         \begin{itemize}
             \item Write tests for functions \textit{when you write the functions}
             \item Write checks your data should pass
+            \item Tip: accumulate a bank of test cases over time
         \end{itemize}
         \item<3-> Know and use the idioms of your language
         \begin{itemize}
@@ -136,27 +157,29 @@ All materials from today's presentation are on GitHub at \\
         \end{itemize}
         \item<4-> Understand all unexpected results
         \begin{itemize}
-            \item Learn how to read the error messages
+            \item Check all your results for anything unusual (smell test)
+            \item Learn how to read your language's error messages
         \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}{When organizing your project}
     \begin{itemize}
-        \item Aim for full reproducibility, including a detailed readme file instructing a replicator \textit{exactly what to do}\itemsep=2em
+        \item Split your code into steps, with a clear order\itemsep=2em
+        \begin{itemize}
+            \item Having a master script is strongly recommended
+            \item You should be able to clear all your outputs/intermediate files and run the master script
+        \end{itemize}
+        \item<2-> Aim for full reproducibility, including a detailed readme file instructing a replicator \textit{exactly what to do}
         \begin{itemize}
             \item Keep this file continuously updated as you work
             \item Fewer steps for the replicator = better
         \end{itemize}
-        \item<2-> Don't write critical parts of your code under time pressure
+        \item<3-> Don't write critical parts of your code under time pressure
         \begin{itemize}
             \item If you do, go back and clean it up later
         \end{itemize}
-        \item<3-> Use version control to track changes over time
-        \item<4-> Split your code into steps, with a clear order
-        \begin{itemize}
-            \item You should be able to clear all your outputs/intermediate files and run the master script
-        \end{itemize}
+        \item<4-> Use version control to track changes over time
     \end{itemize}
 \end{frame}
 
@@ -178,6 +201,19 @@ All materials from today's presentation are on GitHub at \\
 \end{frame}
 
 \section{Specific advice: first year}
+
+\begin{frame}{First year is different from research}
+\begin{itemize}
+    \item The work you do in first year is very different from the work you'll do later on, regardless of field\itemsep=2em
+    \item First year teaches you how methods work conceptually, not how to use them in research
+    \item<2-> Advice: treat this as an opportunity to learn by doing
+    \begin{itemize}
+        \item Develop good habits
+        \item Spend some time planning your workflow and your approach
+        \item Decide what skills you want to learn, and take first year as an opportunity to learn them
+    \end{itemize}
+\end{itemize}
+\end{frame}
 
 \begin{frame}{First year vs. research}
     \begin{tabular}{p{2.5cm}|p{3.5cm}|p{3.5cm}}
@@ -207,7 +243,7 @@ Smell test + write lots of formal tests \\
 \hline
 Collaboration &
 Discuss with group, but write code independently &
-Split tasks depending on you and your coauthors' styles \\
+Divide tasks + perhaps do code review \\
 \hline
 Version control &
 Nice to have, but optional &
@@ -240,7 +276,7 @@ Very important
     \end{itemize}
     \item Ask a question on Stack Overflow
     \begin{itemize}
-        \item Stack Overflow has guidance on how to ask a good question; read that first
+        \item Stack Overflow has guidance on how to ask a good question (varies by language); read that first
     \end{itemize}
 \end{enumerate}
 \end{frame}
@@ -265,15 +301,22 @@ Very important
 
 \begin{frame}{Alternatives to Julia}
 \begin{itemize}
-    \item R\itemsep=2em
+    \item Matlab\itemsep=2em
+    \begin{itemize}
+        \item Legacy code + inertia
+        \item Dynare (for macro)
+        \item Lacks features of modern languages
+        \item Expensive outside of academia (or use Octave)
+    \end{itemize}
+    \item<2-> R
     \begin{itemize}
         \item De facto standard in statistics
         \item Great for work with real data
         \item Matrix syntax is less intuitive
     \end{itemize}
-    \item<2-> Python
+    \item<3-> Python
     \begin{itemize}
-        \item De facto standard in physical sciences, engineering, and the tech industry
+        \item De facto standard in the tech industry and, increasingly, physical sciences
         \item Great all-purpose language (``Swiss army knife'')
         \item Matrix syntax has improved but is still less intuitive than Julia's
     \end{itemize}
@@ -290,8 +333,8 @@ Very important
     \item<2-> Cons
     \begin{itemize}
         \item Generally harder to use than R or Python for manipulation of real data\itemsep=2em
-        \item The language is unstable (most help files online before 2018 are useless)
-        \item The community is less active than R and Python
+        \item The language is unstable (most resources from before 2018/Julia v1.0 are useless)
+        \item The community is smaller than R and Python
     \end{itemize}
 \end{itemize}
 \end{frame}
@@ -303,4 +346,7 @@ Very important
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Now...}
+Time for the demo!
+\end{frame}
 \end{document}
