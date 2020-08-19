@@ -1,5 +1,5 @@
 # Math camp coding session
-An introduction to coding for econ PhD students, using Julia
+An introduction to coding for econ PhD students, using Julia  
 20 August 2020
 
 Contents:
