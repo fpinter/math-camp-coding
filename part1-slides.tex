@@ -50,6 +50,7 @@
         \item Feel free to ask questions throughout!
     \end{itemize}
 \end{enumerate}
+\vspace{0.5in}
 All materials from today's presentation are on GitHub at \\
 \url{https://github.com/fpinter/math-camp-coding}
 \end{frame}
@@ -58,7 +59,7 @@ All materials from today's presentation are on GitHub at \\
 
 \begin{frame}{Basic principles}
     \begin{enumerate}
-        \item Learn by doing (practice!)
+        \item Learn by doing (practice!)\itemsep=2em
         \item Always keep your future self in mind
         \item Your time is valuable
         \item Talk to people about programming
@@ -67,7 +68,7 @@ All materials from today's presentation are on GitHub at \\
 
 \begin{frame}{Learn by doing}
     \begin{itemize}
-        \item Especially early in grad school, treat learning about programming as an investment
+        \item Especially early in grad school, treat learning about programming as an investment\itemsep=2em
         \item Practice new skills as often as you can
     \end{itemize}
 \end{frame}
@@ -96,7 +97,7 @@ All materials from today's presentation are on GitHub at \\
 \begin{frame}{Your time is valuable}
     \begin{itemize}
         \item Spend time improving your ability to work, organization, and accuracy\itemsep=2em
-        \item Do not spend too much time making your code run faster
+        \item Time spent making your code run faster is often (but not always) a waste
         \item<2> A classic quote in computing: \begin{quote}
     ``Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a  strong negative impact when debugging and maintenance are considered. We \textit{should} forget about small efficiencies, say about 97\% of the time: premature optimization is the root of all evil.''
     \end{quote}
@@ -122,18 +123,18 @@ All materials from today's presentation are on GitHub at \\
         \begin{itemize}
             \item Don't copy and paste; write functions
         \end{itemize}
-        \item Write (and save) formal tests
+        \item<2-> Write (and save) formal tests
         \begin{itemize}
             \item Write tests for functions \textit{when you write the functions}
             \item Write checks your data should pass
         \end{itemize}
-        \item Know and use the idioms of your language
+        \item<3-> Know and use the idioms of your language
         \begin{itemize}
             \item Know \textit{why} your code works the way it does
             \item Know the common gotchas
             \item Nothing should be magic!
         \end{itemize}
-        \item Understand all unexpected results
+        \item<4-> Understand all unexpected results
         \begin{itemize}
             \item Learn how to read the error messages
         \end{itemize}
@@ -147,12 +148,12 @@ All materials from today's presentation are on GitHub at \\
             \item Keep this file continuously updated as you work
             \item Fewer steps for the replicator = better
         \end{itemize}
-        \item Don't write critical parts of your code under time pressure
+        \item<2-> Don't write critical parts of your code under time pressure
         \begin{itemize}
             \item If you do, go back and clean it up later
         \end{itemize}
-        \item Use version control to track changes over time
-        \item Split your code into steps, with a clear order
+        \item<3-> Use version control to track changes over time
+        \item<4-> Split your code into steps, with a clear order
         \begin{itemize}
             \item You should be able to clear all your outputs/intermediate files and run the master script
         \end{itemize}
@@ -164,7 +165,7 @@ All materials from today's presentation are on GitHub at \\
         \item Tired: wars between programming languages on Twitter\itemsep=2em
         \item Wired: using the right language for the task at hand
         \item There's no rule saying you have to use the same language for everything (even within a project)
-        \item Questions to ask yourself:
+        \item<2-> Questions to ask yourself:
         \begin{itemize}
             \item What do your coauthors use?
             \item In what language do you work most efficiently?
@@ -184,10 +185,10 @@ All materials from today's presentation are on GitHub at \\
     \hline
     Day to day work &
 Numerical computation with clean or simulated data &
-Mostly wrangling real-world data (unless you’re a theorist) \\
+Mostly wrangling real-world data (unless you're a theorist) \\
 \hline
 Maintainability &
-Submit and you’re done &
+Submit and you're done &
 Return to your code many times, sometimes years later \\
 \hline
 Accuracy &
@@ -206,7 +207,7 @@ Smell test + write lots of formal tests \\
 \hline
 Collaboration &
 Discuss with group, but write code independently &
-Depends on your style and your coauthors’ styles \\
+Split tasks depending on you and your coauthors' styles \\
 \hline
 Version control &
 Nice to have, but optional &
@@ -227,7 +228,7 @@ Very important
 \begin{frame}{How to get help}
 
 \begin{enumerate}
-    \item Check the built-in help in the language
+    \item Check the built-in help in the language\itemsep=2em
     \item Google
     \begin{itemize}
         \item Often the result will be a Stack Overflow answer -- these are often helpful but not always
@@ -279,11 +280,26 @@ Very important
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Downsides of Julia}
+\begin{frame}{Pros and cons of Julia}
 \begin{itemize}
-    \item Generally harder to use than R or Python for manipulation of real data\itemsep=2em
-    \item The language is unstable (most help files online before 2018 are useless)
-    \item The community is less active than R and Python
+    \item Pros\itemsep=2em
+    \begin{itemize}
+        \item Clean syntax and fast execution for numerical computation\itemsep=2em
+        \item Native support for automatic differentiation makes optimization easy, robust, and quick
+    \end{itemize}
+    \item<2-> Cons
+    \begin{itemize}
+        \item Generally harder to use than R or Python for manipulation of real data\itemsep=2em
+        \item The language is unstable (most help files online before 2018 are useless)
+        \item The community is less active than R and Python
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{More on Julia vs. other languages}
+\begin{itemize}
+    \item \href{https://tradediversion.net/2018/09/17/why-i-encourage-econ-phd-students-to-learn-julia/}{Why I encourage econ PhD students to learn Julia} (Jonathan Dingel, September 2018)\itemsep=2em
+    \item \href{https://www.sas.upenn.edu/~jesusfv/Lecture_HPC_5_Scientific_Computing_Languages.pdf}{Scientific Computing Languages} (Jesús Fernández-Villaverde, November 2019)
 \end{itemize}
 \end{frame}
 
